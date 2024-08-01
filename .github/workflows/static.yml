@@ -46,6 +46,7 @@ jobs:
           
           base_url="https://bibhutisingh93.github.io/bibhuti_test"
           for dir in out/reports/*; do
+          echo $dir
             #if [ -d "$dir" ]; then
               #timestamp=$(basename $dir | cut -d'-' -f1)
               #run_id=$(basename $dir | cut -d'-' -f2)
