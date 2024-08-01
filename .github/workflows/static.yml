@@ -45,8 +45,7 @@ jobs:
         run: |
           git fetch --all
           git checkout origin/gh-pages -- index.md || echo "# Test Reports" > out/index.md
-          ls
-          cat index.md
+          mv index.md out/
           ls
 
       - name: Update index page
