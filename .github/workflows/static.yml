@@ -43,10 +43,7 @@ jobs:
           ls *
       - name: Update index page
         run: |
-          echo "# Test Reports" > out/index.md
-          echo "" >> out/index.md
-          echo "Below is the list of all test reports generated:" >> out/index.md
-          echo "" >> out/index.md
+          
           base_url="https://bibhutisingh93.github.io/bibhuti_test"
           for dir in out/reports/*; do
             if [ -d "$dir" ]; then
