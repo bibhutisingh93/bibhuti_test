@@ -70,5 +70,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
-          publish_dir: ./
+          publish_dir: |
+             ./index.html
+             ./out
           keep_files: true
