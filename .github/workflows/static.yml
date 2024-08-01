@@ -41,6 +41,11 @@ jobs:
           mv index.html out/reports/$timestamp-$run_id/index.html
           pwd
           ls *
+      - name: Fetch existing index.md
+        run: |
+          git fetch --all
+          git checkout gh-pages -- out/index.md || echo "# Test Reports" > out/index.md
+
       - name: Update index page
         run: |
           
