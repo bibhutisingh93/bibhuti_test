@@ -2,4 +2,4 @@
 
 Below is the list of all test reports generated:
 
-- [Report generated on 1970-08-23 06:26:41, Run ID: 10197436090](./reports/20240801133344-10197436090/index.html)
+- [Report generated on 1970-08-23 06:26:41, Run ID: 10197436090](./reports/20240801133406-10197436090/index.html)
