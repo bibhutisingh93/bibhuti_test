@@ -44,7 +44,7 @@ jobs:
       - name: Fetch existing index.md
         run: |
           git fetch --all
-          git checkout gh-pages -- out/index.md || echo "# Test Reports" > out/index.md
+          git checkout gh-pages -- index.md || echo "# Test Reports" > out/index.md
 
       - name: Update index page
         run: |
