@@ -46,12 +46,15 @@ jobs:
           
           base_url="https://bibhutisingh93.github.io/bibhuti_test"
           for dir in out/reports/*; do
-            if [ -d "$dir" ]; then
-              timestamp=$(basename $dir | cut -d'-' -f1)
-              run_id=$(basename $dir | cut -d'-' -f2)
-              echo "- [Report generated on $(date -d @$((timestamp / 1000000)) '+%Y-%m-%d %H:%M:%S'), Run ID: $run_id]($base_url/reports/$(basename $dir)/index.html)" >> out/index.md
-            fi
+            #if [ -d "$dir" ]; then
+              #timestamp=$(basename $dir | cut -d'-' -f1)
+              #run_id=$(basename $dir | cut -d'-' -f2)
+              [ -d "$dir" ] && echo "- [$(basename $dir)]($base_url/reports/$(basename $dir)/index.html)" >> out/index.md
           done
+
+         #     echo "- [Report generated on $(date -d @$((timestamp / 1000000)) '+%Y-%m-%d %H:%M:%S'), Run ID: $run_id]($base_url/reports/$(basename $dir)/index.html)" >> out/index.md
+          # fi
+          #done
 
       
 
