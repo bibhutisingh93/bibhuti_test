@@ -34,18 +34,27 @@ jobs:
       - name: Run tests and generate report
         run: |
           timestamp=$(date +%Y%m%d%H%M%S)
+          run_id=${{ github.run_id }}
           ls
           echo $timestamp
-          mkdir -p out/reports/$timestamp
-          mv Index.html out/reports/$timestamp/index.html
+          mkdir -p out/reports/$timestamp-$run_id
+          cp index.html out/reports/$timestamp-$run_id/index.html
           pwd
           ls *
       - name: Update index page
         run: |
           echo "# Test Reports" > out/index.md
+          echo "" >> out/index.md
+          echo "Below is the list of all test reports generated:" >> out/index.md
+          echo "" >> out/index.md
           for dir in out/reports/*; do
-            [ -d "$dir" ] && echo "- [$(basename $dir)](reports/$(basename $dir)/index.html)" >> out/index.md
+            if [ -d "$dir" ]; then
+              timestamp=$(basename $dir | cut -d'-' -f1)
+              run_id=$(basename $dir | cut -d'-' -f2)
+              echo "- [Report generated on $(date -d @$((timestamp / 1000000)) '+%Y-%m-%d %H:%M:%S'), Run ID: $run_id](./reports/$(basename $dir)/index.html)" >> out/index.md
+            fi
           done
+      
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
