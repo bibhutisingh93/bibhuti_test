@@ -1,5 +1,2 @@
 # Test Reports
-
-Below is the list of all test reports generated:
-
-- [Report generated on 1970-08-23 06:26:41, Run ID: 10197436090](./reports/20240801133406-10197436090/index.html)
+- [20240801142432-10200183900](https://bibhutisingh93.github.io/bibhuti_test/reports/20240801142432-10200183900/index.html)
