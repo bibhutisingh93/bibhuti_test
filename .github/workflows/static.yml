@@ -34,9 +34,12 @@ jobs:
       - name: Run tests and generate report
         run: |
           timestamp=$(date +%Y%m%d%H%M%S)
-          
+          ls
+          echo $timestamp
           mkdir -p out/reports/$timestamp
           mv Index.html out/reports/$timestamp/index.html
+          pwd
+          ls *
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
