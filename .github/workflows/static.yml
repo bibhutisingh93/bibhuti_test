@@ -36,7 +36,7 @@ jobs:
           timestamp=$(date +%Y%m%d%H%M%S)
           
           mkdir -p out/reports/$timestamp
-          mv index.html out/reports/$timestamp/index.html
+          mv Index.html out/reports/$timestamp/index.html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
