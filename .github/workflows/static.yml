@@ -33,11 +33,15 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # Upload entire repository
-          path: '.'
+      - name: Run tests and generate report
+        run: |
+          timestamp=$(date +%Y%m%d%H%M%S)
+          
+          mkdir -p out/reports/$timestamp
+          mv index.html out/reports/$timestamp/index.html
+
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          publish_dir: ./out
+          keep_files: true
