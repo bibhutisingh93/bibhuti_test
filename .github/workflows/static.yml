@@ -40,7 +40,7 @@ jobs:
           echo $timestamp
           mkdir -p out/reports/$timestamp-$run_id
           cp index.html out/reports/$timestamp-$run_id/index.html
-          cp index.html out/reports/
+          cp index.html out/
           
           pwd
           ls *
