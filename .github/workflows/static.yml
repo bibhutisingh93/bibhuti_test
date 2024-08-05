@@ -40,7 +40,7 @@ jobs:
           echo $timestamp
           mkdir -p out/reports/$timestamp-$run_id
           cp index.html out/reports/$timestamp-$run_id/index.html
-          mv index.html out/reports/
+          
           pwd
           ls *
       - name: Fetch existing index.md
