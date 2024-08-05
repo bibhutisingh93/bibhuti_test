@@ -40,6 +40,7 @@ jobs:
           echo $timestamp
           mkdir -p out/reports/$timestamp-$run_id
           cp index.html out/reports/$timestamp-$run_id/index.html
+          mv index.html out/reports/
           pwd
           ls *
       - name: Fetch existing index.md
@@ -71,7 +72,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
-          publish_dir: |
-            ./out
-            ./index.html
+          publish_dir: ./out
+            
           keep_files: true
