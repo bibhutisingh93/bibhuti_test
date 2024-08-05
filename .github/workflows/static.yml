@@ -73,5 +73,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
           publish_dir: |
              ./index.html
-             ./out
+             ./out/
           keep_files: true
